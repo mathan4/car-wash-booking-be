@@ -1,7 +1,7 @@
 const mongoose= require("mongoose")
 
 const userSchema = mongoose.Schema({
-    user:{
+    name:{
         type:String,
         required:true
     },
@@ -11,14 +11,10 @@ const userSchema = mongoose.Schema({
         unique:true
     },
     password:{
-        type:Number,
+        type:String,
         required:true
     },
-    role:{
-        type:String,
-        enum:[user,admit],
-        default:user
-    }},
+    },
 
     {
         collection: 'users'
