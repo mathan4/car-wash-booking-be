@@ -1,26 +1,25 @@
 const mongoose= require("mongoose")
 
 const serviceSchema= new mongoose.Schema({
-    name:{
+    location:{
         type:String,
         required:true
     },
-    service:[{
-        serviceName :{
-          type:String,
-          required:true
-        },
-        serviceDescription:{
-            type:String,
-            required:true
-        },
-        servicePrice:{
-            type:Number,
-            required:true
-        }
-     }]
-
-},{
+    serviceName :{
+    type:String,
+    required:true
+    },
+    serviceDescription:{
+    type:String,
+    required:true
+    },
+    servicePrice:{
+    type:Number,
+    required:true
+    }
+   
+ },
+{
     collection:'service'    
 })
 

@@ -2,13 +2,16 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const mongoose= require("mongoose")
+const cors= require("cors")
 const PORT = process.env.PORT
 const userRoute= require('./routes/userRoute')
+const {verifyToken,isAdmin}=require('./middleware/verifyUserAdmin')
 
 app.get("/api/v1",(request,response)=>{
     response.status(200).send({message:"Server Running"})
 })
 
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
